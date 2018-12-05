@@ -39,10 +39,9 @@
         <section class="d-flex flex-column" id="content">
           <div class="content-container d-flex flex-row justify-content-center h-100">
             <div class="content-placeholder d-flex w-50 flex-column-reverse h-100">
+              <MsgBull v-for="m in messages" v-bind:key="m.id" v-bind:msg="m.msg" v-bind:createDate="m.date"></MsgBull>
 
-              <MsgBull v-bind:msg="message" v-bind:createDate="new Date()"></MsgBull>
-
-              <div class="msgbull">
+              <!-- <div class="msgbull">
                 <div class="msgbull-block">
                   <div class="msgbull-container p-2 mr-3 mb-2">
                     <div class="msgbull-text">
@@ -56,36 +55,12 @@
                     <span class="fa fa-play icon"></span>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
-              <div class="msgbull">
-                <div class="msgbull-block">
-                  <div class="msgbull-container p-2 mr-3 mb-2">
-                    <div
-                      class="msgbull-text"
-                    >i was the first black man to be the president of United States !</div>
-                    <div class="msgbull-time text-right font-weight-bold">
-                      <p class="p-0 m-0">10:35</p>
-                    </div>
-                    <span class="fa fa-play icon"></span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="msgbull">
-                <div class="msgbull-block">
-                  <div class="msgbull-container p-2 mr-3 mb-2">
-                    <div class="msgbull-text">Hello guy, i'm barack !</div>
-                    <div class="msgbull-time text-right font-weight-bold">
-                      <p class="p-0 m-0">10:55</p>
-                    </div>
-                    <span class="fa fa-play icon"></span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
+
         <Footer></Footer>
       </div>
     </div>
@@ -99,6 +74,8 @@ import Component from "vue-class-component";
 import MsgBull from "./components/MsgBull.vue";
 import Footer from "./components/Footer.vue";
 
+const MAX_MSG = 2;
+
 @Component({
   components: {
     MsgBull,
@@ -106,33 +83,10 @@ import Footer from "./components/Footer.vue";
   }
 })
 export default class App extends Vue {
-  // data
-  // Initial data can be declared as instance properties
-  message = "1234";
 
-  // // return initial data
-  // data () {
-  //   return {
-  //     message: "tutu"
-  //   }
-  // }
-
-  // Component methods can be declared as instance methods
-  onClick(): void {
-    window.alert(this.message);
-  }
-
-  // computed
-  get reverseMessage() {
-    return this.message
-      .split("")
-      .reverse()
-      .join("");
-  }
-  // method
-  changeMessage() {
-    this.message = "Good bye";
-  }
+  messages: any = [];
+  interval!: any;
+  nb: number = 0;
 
   // Lifecycle hooks
   created() {
@@ -140,12 +94,30 @@ export default class App extends Vue {
   }
   mounted() {
     console.log(`== App - MOUNTED ==`);
+
+    this.interval = setInterval(() => {
+
+      if (this.nb >= MAX_MSG) {
+        clearInterval(this.interval);
+        return;
+      }
+
+      this.nb++;
+
+      this.messages = [{
+        msg: `In ullamco cupidatat et laboris id tempor proident. ${this.nb}`,
+        date: new Date(),
+        id: this.nb
+      }].concat(this.messages.slice(0, this.messages.length));
+
+    }, 5000);
   }
   updated() {
     console.log(`== App - UPDATED ==`);
   }
   destroyed() {
     console.log(`== App - DESTROYED ==`);
+    clearInterval(this.interval);
   }
 }
 </script>
