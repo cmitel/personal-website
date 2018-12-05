@@ -6,7 +6,7 @@
           {{ msg }}
         </div>
         <div class="msgbull-time text-right font-weight-bold">
-          <p class="p-0 m-0">{{ createDate }}</p>
+          <p class="p-0 m-0">{{ msgDate }}</p>
         </div>
         <span class="fa fa-play icon"></span>
       </div>
@@ -45,48 +45,29 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
 
-@Component({
-  props: {
-    msg: {
-      type: String,
-      default: "TEst"
-    },
-    createDate: {
+@Component
+export default class MsgBull extends Vue {
+
+  // Properties
+  @Prop({
       type: Date,
       default: new Date()
-    }
-  }
-})
-export default class MsgBull extends Vue {
-  // data
-  // Initial data can be declared as instance properties
-  // message = "1234"
+  })
+  createDate!: Date;
 
-  // // return initial data
-  // data () {
-  //   return {
-  //     message: 123
-  //   }
-  // }
-
-  // Component methods can be declared as instance methods
-  // onClick (): void {
-  //   window.alert(this.message)
-  // }
+  @Prop({
+      type: String,
+      default: "test"
+  })
+  msg!: String;
 
   // computed
-  // get reverseMessage() {
-  //   return this.message
-  //     .split("")
-  //     .reverse()
-  //     .join("");
-  // }
-
-  // method
-  // changeMessage() {
-  //   this.message = "Good bye";
-  // }
+  get msgDate(): String {
+    const d = this.createDate || new Date(1970, 1, 1);
+    return `${d.getUTCHours()}:${d.getUTCMinutes()}:${d.getUTCSeconds()}`;
+  }
 
   // Lifecycle hooks
   created() {
