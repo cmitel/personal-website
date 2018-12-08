@@ -39,23 +39,10 @@
         <section class="d-flex flex-column" id="content">
           <div class="content-container d-flex flex-row justify-content-center h-100">
             <div class="content-placeholder d-flex w-50 flex-column-reverse h-100">
-              <MsgBull v-for="m in messages" v-bind:key="m.id" v-bind:msg="m.msg" v-bind:createDate="m.date"></MsgBull>
 
-              <!-- <div class="msgbull">
-                <div class="msgbull-block">
-                  <div class="msgbull-container p-2 mr-3 mb-2">
-                    <div class="msgbull-text">
-                      Hello guy, i'm barack and i was the first black man to be the president of United States !
-                      Hello guy, i'm barack and i was the first black man to be the president of United States !
-                      Hello guy, i'm barack and i was the first black man to be the president of United States !
-                    </div>
-                    <div class="msgbull-time text-right font-weight-bold">
-                      <p class="p-0 m-0">10:02</p>
-                    </div>
-                    <span class="fa fa-play icon"></span>
-                  </div>
-                </div>
-              </div> -->
+              <Typing v-if="isTyping"></Typing>
+
+              <MsgBull v-for="m in messages" v-bind:key="m.id" v-bind:msg="m.msg" v-bind:createDate="m.date"></MsgBull>
 
             </div>
           </div>
@@ -73,13 +60,15 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import MsgBull from "./components/MsgBull.vue";
 import Footer from "./components/Footer.vue";
+import Typing from "./components/Typing.vue";
 
 const MAX_MSG = 2;
 
 @Component({
   components: {
     MsgBull,
-    Footer
+    Footer,
+    Typing
   }
 })
 export default class App extends Vue {
@@ -87,6 +76,7 @@ export default class App extends Vue {
   messages: any = [];
   interval!: any;
   nb: number = 0;
+  isTyping: boolean = false;
 
   // Lifecycle hooks
   created() {
