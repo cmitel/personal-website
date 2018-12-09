@@ -7,7 +7,8 @@
           id="txtContent"
           type="text"
           name="content"
-        >
+          v-model="inputTxt"
+        />
       </div>
     </div>
   </section>
@@ -51,6 +52,46 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 @Component
-export default class MsgBull extends Vue {}
+export default class Footer extends Vue {
+
+  msg: string = `Hello guys ! I'm barack obama the first black president of United States. And I'm going to talk about me not for long but I just want to you to know me better than you do right now. What do you think fella ?`;
+  inputTxt: string = "";
+
+  created() {
+
+  }
+
+  mounted(): void {
+    console.log(`= Footer : MOUNTED =`)
+
+    let index = 0;
+
+    $('#txtContent').focus();
+
+    setInterval(() => {
+
+      let startElements = 0;
+
+      [3, 2, 3, 1, 3].forEach(e => {
+
+        startElements = this.inputTxt.length;
+
+        if (this.inputTxt.length <= this.msg.length && this.inputTxt.length - startElements < e) {
+          this.inputTxt += this.msg.charAt(index);
+          index++;
+          $('#txtContent').blur();
+          $('#txtContent').focus();
+        }
+
+      });
+
+    }, 200);
+  }
+
+  destroyed(): void {
+    console.log(`= Footer : DESTROYED =`)
+  }
+
+}
 </script>
 
