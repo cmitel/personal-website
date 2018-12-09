@@ -32,7 +32,13 @@ let config = {
       allChunks: true,
     }),
 
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
+
   ],
 
   module: {
