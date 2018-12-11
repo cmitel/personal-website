@@ -1,10 +1,10 @@
 <template>
   <div class="typing-inprogress mb-0">
-    <div class="w-100 typing-container text-left mb-0">
-      <div class="block w-100 mb-0 text-right rounded">
-        <i class="fa fa-circle">&nbsp;</i>
-        <i class="fa fa-circle">&nbsp;</i>
-        <i class="fa fa-circle">&nbsp;</i>
+    <div class="typing-container w-100 d-inline-block mb-0 text-right">
+      <div class="mb-0 block">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   </div>
@@ -15,60 +15,40 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 @Component
-export default class Typing extends Vue { }
+export default class Typing extends Vue {}
 </script>
 
-<style>
-  .typing-container {
+
+<style lang="scss">
+.typing-container {
   position: relative;
-  margin-left: auto;
-}
+  margin-right: auto;
 
-.typing-container .fa-circle {
-  padding-left: 2px;
-  font-size: 0.75rem;
-}
-
-@keyframes monanimation {
-  0% {
-    font-size: 0.95rem;
+  .block {
+    float: right;
   }
+
+  span {
+    height: 15px;
+    width: 15px;
+    float: left;
+    margin: 0 1px;
+    background-color: #9e9ea1;
+    display: block;
+    border-radius: 50%;
+    opacity: 0.4;
+    @for $i from 1 through 3 {
+      &:nth-of-type(#{$i}) {
+        animation: 1s blink infinite ($i * 0.3333s);
+      }
+    }
+  }
+}
+
+@keyframes blink {
   50% {
-    font-size: 1.25rem;
+    opacity: 1;
   }
-  100%{
-    font-size: 0.95rem;
-  }
-}
-
-@keyframes monanimation3 {
-  0% {
-    font-size: 1.45rem;
-  }
-  70% {
-    font-size: 0.95rem;
-  }
-  100%{
-    font-size: 1.45rem;
-  }
-}
-
-.typing-container .fa-circle:nth-child(1) {
-  animation: monanimation 2s 0s ease-in-out infinite;
-}
-
-.typing-container .fa-circle:nth-child(2) {
-  animation: monanimation 2s 1s ease-in-out infinite;
-}
-
-.typing-container .fa-circle:nth-child(3) {
-  animation: monanimation3 2s 0s ease-in-out infinite;
-}
-
-.typing-container .block {
-  float: right;
-  margin-right: 10px;
-  color: lightgray;
 }
 </style>
 
