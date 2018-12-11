@@ -2,13 +2,9 @@
   <section class="d-flex flex-column justify-content-center" id="footer">
     <div class="footer-container d-flex flex-row justify-content-center">
       <div class="d-flex w-50">
-        <input
-          class="d-flex pl-3 pr-3"
-          id="txtContent"
-          type="text"
-          name="content"
-          v-model="inputTxt"
-        />
+        <div class="w-100 d-inline-block txtContent p-3">
+          <span id="typed" class="w-100"></span>
+        </div>
       </div>
     </div>
   </section>
@@ -19,79 +15,78 @@
   flex-grow: 1;
 }
 
-#txtContent {
-  flex-grow: 1;
-  flex-basis: auto;
-  flex-shrink: 1;
+.txtContent {
   border-radius: 2rem;
-  // border: none;
   border: solid 1px #cbd7db;
   background-color: #deebef;
   transition: background-color ease 0.25s;
-  height: 3rem;
   font-size: 0.95rem;
+
+  &:hover {
+    background-color: #cbd7db;
+  }
+
+  &:focus {
+    background-color: #fff;
+    outline: none;
+    border: solid 1px #cbd7db;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    font-size: 0.95rem;
+  }
 }
 
-#txtContent:hover {
-  background-color: #cbd7db;
-}
-
-#txtContent:focus {
-  background-color: #fff;
-  outline: none;
-  border: solid 1px #cbd7db;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
-  font-size: 0.95rem;
+.typed-cursor {
+  font-size: 1rem;
+  font-weight: 500;
 }
 </style>
 
 <script lang="ts">
 import Vue from "vue";
+import { Prop } from "vue-property-decorator";
 import Component from "vue-class-component";
+import Typed from "typed.js";
 
 @Component
 export default class Footer extends Vue {
+  @Prop({
+    type: Array,
+    default: ["Hello world !"]
+  })
+  messages!: string[];
 
-  msg: string = `Hello guys ! I'm barack obama the first black president of United States. And I'm going to talk about me not for long but I just want to you to know me better than you do right now. What do you think fella ?`;
-  inputTxt: string = "";
+  preStringTyped(arrayPos: number, self: Typed): void {
+    this.$emit("typing", true);
+  }
 
-  created() {
+  onStringTyped(arrayPos: number, self: Typed): void {
+    this.$emit("typing", false);
+    this.$emit("typed", arrayPos);
+  }
 
+  onComplete(self: Typed): void {
+    this.$emit("typing", false);
   }
 
   mounted(): void {
-    console.log(`= Footer : MOUNTED =`)
-
-    let index = 0;
-
-    $('#txtContent').focus();
-
-    setInterval(() => {
-
-      let startElements = 0;
-
-      [3, 2, 3, 1, 3].forEach(e => {
-
-        startElements = this.inputTxt.length;
-
-        if (this.inputTxt.length <= this.msg.length && this.inputTxt.length - startElements < e) {
-          this.inputTxt += this.msg.charAt(index);
-          index++;
-          $('#txtContent').blur();
-          $('#txtContent').focus();
-        }
-
-      });
-
-    }, 200);
+    console.log(`= Footer : MOUNTED =`);
+    const opts = {
+      strings: this.messages,
+      typeSpeed: 50,
+      preStringTyped: this.preStringTyped,
+      onStringTyped: this.onStringTyped,
+      onComplete: this.onComplete,
+      fadeOut: true,
+      fadeOutDelay: true
+    };
+    const typed = new Typed("#typed", opts);
   }
 
   destroyed(): void {
-    console.log(`= Footer : DESTROYED =`)
+    console.log(`= Footer : DESTROYED =`);
   }
-
 }
 </script>
 

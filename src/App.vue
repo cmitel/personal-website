@@ -48,7 +48,7 @@
           </div>
         </section>
 
-        <Footer></Footer>
+        <Footer @typing="onTyping" @typed="onTyped" :messages="tabMessages"></Footer>
       </div>
     </div>
   </div>
@@ -62,7 +62,7 @@ import MsgBull from "./components/MsgBull.vue";
 import Footer from "./components/Footer.vue";
 import Typing from "./components/Typing.vue";
 
-const MAX_MSG = 2;
+import Messages from './assets/config/messages.config';
 
 @Component({
   components: {
@@ -78,29 +78,30 @@ export default class App extends Vue {
   nb: number = 0;
   isTyping: boolean = false;
 
+  onTyping(isTyping: boolean): void {
+    this.isTyping = isTyping === true;
+  }
+
+  onTyped(typedTxtIndex: number): void {
+    this.messages.push(
+      Messages[typedTxtIndex]
+    );
+  }
+
+  get tabMessages(): string[] {
+    const data = [];
+    for (const el of Messages) {
+      data.push(el.msg);
+    }
+    return data;
+  }
+
   // Lifecycle hooks
   created() {
     console.log(`== App - CREATED ==`);
   }
   mounted() {
     console.log(`== App - MOUNTED ==`);
-
-    this.interval = setInterval(() => {
-
-      if (this.nb >= MAX_MSG) {
-        clearInterval(this.interval);
-        return;
-      }
-
-      this.nb++;
-
-      this.messages = [{
-        msg: `In ullamco cupidatat et laboris id tempor proident. ${this.nb}`,
-        date: new Date(),
-        id: this.nb
-      }].concat(this.messages.slice(0, this.messages.length));
-
-    }, 5000);
   }
   updated() {
     console.log(`== App - UPDATED ==`);
