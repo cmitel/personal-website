@@ -83,9 +83,11 @@ export default class App extends Vue {
   }
 
   onTyped(typedTxtIndex: number): void {
-    this.messages.push(
+    if (Messages[typedTxtIndex] != undefined) {
+      this.messages.push(
       Messages[typedTxtIndex]
     );
+    }
   }
 
   get tabMessages(): string[] {

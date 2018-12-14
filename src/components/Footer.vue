@@ -72,6 +72,7 @@ export default class Footer extends Vue {
 
   mounted(): void {
     console.log(`= Footer : MOUNTED =`);
+    this.messages.push(``);
     const opts = {
       strings: this.messages,
       typeSpeed: 50,
