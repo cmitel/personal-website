@@ -119,7 +119,7 @@ export default class App extends Vue {
 html,
 body {
   flex-grow: 1;
-  flex-shrink: 0;
+  flex-shrink: 1;
   flex-basis: auto;
   height: 100%;
   font-size: 100%;
@@ -174,8 +174,8 @@ a:hover {
 
 #container,
 [role="v-container"] {
-  flex-grow: 1;
-  flex-shrink: 0;
+  flex-grow: 2;
+  flex-shrink: 1;
   flex-basis: auto;
   height: 100%;
 }
