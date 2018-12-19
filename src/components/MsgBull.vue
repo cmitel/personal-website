@@ -2,8 +2,7 @@
   <div class="msgbull">
     <div class="msgbull-block">
       <div class="msgbull-container p-2 mr-3 mb-2">
-        <div class="msgbull-text">
-          {{ msg }}
+        <div class="msgbull-text" v-html="msg">
         </div>
         <div class="msgbull-time text-right font-weight-bold">
           <p class="p-0 m-0">{{ msgDate }}</p>

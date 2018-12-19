@@ -62,8 +62,8 @@ export default class Footer extends Vue {
   }
 
   onStringTyped(arrayPos: number, self: Typed): void {
-    this.$emit("typing", false);
     this.$emit("typed", arrayPos);
+    this.$emit("typing", false);
   }
 
   onComplete(self: Typed): void {
@@ -75,12 +75,13 @@ export default class Footer extends Vue {
     this.messages.push(``);
     const opts = {
       strings: this.messages,
-      typeSpeed: 50,
+      typeSpeed: 10,
       preStringTyped: this.preStringTyped,
       onStringTyped: this.onStringTyped,
       onComplete: this.onComplete,
       fadeOut: true,
-      fadeOutDelay: true
+      fadeOutDelay: true,
+      contentType: 'html'
     };
     const typed = new Typed("#typed", opts);
   }
