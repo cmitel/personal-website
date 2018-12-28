@@ -39,11 +39,14 @@
         <section class="d-flex flex-column" id="content">
           <div class="content-container d-flex flex-row justify-content-center h-100">
             <div class="content-placeholder d-flex w-50 flex-column-reverse h-100">
-
               <Typing v-if="isTyping"></Typing>
 
-              <MsgBull v-for="m in messages" v-bind:key="m.id" v-bind:msg="m.msg" v-bind:createDate="m.date"></MsgBull>
-
+              <transition-group
+                name="custom-classes-transition"
+                enter-active-class="animated fadeInUpBig"
+              >
+                <MsgBull v-for="m in messages" v-bind:key="m.id" :class="[`order-${messages.length-m.id}`]" v-bind:msg="m.msg" v-bind:createDate="m.date"></MsgBull>
+              </transition-group>
             </div>
           </div>
         </section>
@@ -85,8 +88,8 @@ export default class App extends Vue {
   onTyped(typedTxtIndex: number): void {
     if (Messages[typedTxtIndex] != undefined) {
       this.messages.push(
-      Messages[typedTxtIndex]
-    );
+        Messages[typedTxtIndex]
+      );
     }
   }
 
