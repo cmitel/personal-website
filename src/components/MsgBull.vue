@@ -18,6 +18,13 @@
   font-size: 0.95rem;
 }
 
+.msgbull a,
+.msgbull a:hover,
+.msgbull a:active {
+  color: yellow;
+  font-weight: bold;
+}
+
 .msgbull-text {
   flex-grow: 1;
   flex-shrink: 0;
