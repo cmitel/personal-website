@@ -72,7 +72,13 @@ export default class MsgBull extends Vue {
   // computed
   get msgDate(): String {
     const d = this.createDate || new Date(1970, 1, 1);
-    return `${d.getUTCHours()}:${d.getUTCMinutes()}:${d.getUTCSeconds()}`;
+    return `${this.toStringDateNumber(d.getUTCHours())}:${this.toStringDateNumber(d.getUTCMinutes())}:${this.toStringDateNumber(d.getUTCSeconds())}`;
+  }
+
+  // methods
+
+  toStringDateNumber(val: number): String {
+    return val < 10 ? `0${val}` : val.toString();
   }
 
   // Lifecycle hooks
