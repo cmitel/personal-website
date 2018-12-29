@@ -2,11 +2,11 @@ const today = new Date();
 
 const messages: any[] = [
   {
-    msg: `From 2014 November to ${today.getFullYear()}, at <a href="www.frequentiel.com" target="_tab">Frequentiel</a>, I was the Solution Architect of the Mobile team (~ 4 people)`,
+    msg: `From 2014 November to ${today.getFullYear()}, at <a href="www.frequentiel.com" target="_tab">Frequentiel</a>, I was the Solution Architect of the Mobile team (between 4 and 6 people)`,
     date: new Date(),
   },
   {
-    msg: `I developed many mobile applications using Cordova framework that helped us to be flexible and more reactive to respond to our customers offers.`,
+    msg: `I developed many mobile applications using <a href="https://cordova.apache.org/" target="_tab">Cordova framework</a> (and many natives Cordova plugins) that helped us to be flexible and more reactive to respond to our customers offers.`,
     date: new Date(),
   },
   {
@@ -14,7 +14,7 @@ const messages: any[] = [
     date: new Date(),
   },
   {
-    msg: `For the personnal intro, I'm living at <a href="https://www.toulouse.fr/" target="_blank">Toulouse, France</a> and I love have my daily workout as much as to go out with my friends !`,
+    msg: `For the personnal intro, I'm living at <a href="https://www.toulouse.fr/" target="_blank">Toulouse, France</a> and I love have my <a href="https://www.basic-fit.com/fr-fr" targert="_tab">daily workout</a> as much as to go out with my friends !`,
     date: new Date(),
   },
   {
