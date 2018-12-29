@@ -58,27 +58,22 @@ export default class Footer extends Vue {
   messages!: string[];
 
   preStringTyped(arrayPos: number, self: Typed): void {
-    console.warn(`preStringTyped`);
     this.$emit("typing", true);
   }
 
   onStringTyped(arrayPos: number, self: Typed): void {
-    console.warn(`onStringTyped`);
     this.$emit("typed", arrayPos);
-    // this.$emit("typing", false);
   }
 
   onComplete(self: Typed): void {
-    console.warn(`onComplete`);
     this.$emit("typing", false);
   }
 
   mounted(): void {
-    console.log(`= Footer : MOUNTED =`);
     this.messages.push(``);
     const opts = {
       strings: this.messages,
-      typeSpeed: 5,
+      typeSpeed: 10,
       preStringTyped: this.preStringTyped,
       onStringTyped: this.onStringTyped,
       onComplete: this.onComplete,
@@ -89,10 +84,6 @@ export default class Footer extends Vue {
       contentType: 'html'
     };
     const typed = new Typed("#typed", opts);
-  }
-
-  destroyed(): void {
-    console.log(`= Footer : DESTROYED =`);
   }
 }
 </script>
