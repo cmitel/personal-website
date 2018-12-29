@@ -12,23 +12,20 @@
           <div class="line"></div>
           <div class="head-footer-block d-flex flex-row justify-content-center">
             <div class="head-footer-container d-flex justify-content-between">
-              <a href="#" title="Folow me !">
+              <a href="https://twitter.com/mitelchris" title="Follow me !" target="_tab">
                 <i class="fa fa-twitter"></i>
               </a>
-              <a href="#" title="Text me !">
+              <a href="skype:schriss971" title="Skype me !" target="_tab">
                 <i class="fa fa-skype"></i>
               </a>
-              <a href="#" title="Call me !">
+              <a href="http://wasav.fr/blog/" title="Check out !" target="_tab">
                 <i class="fa fa-wordpress"></i>
               </a>
-              <a href="#" title="Give a look !">
+              <a href="https://fr.linkedin.com/in/chris-mitel-06977423" title="Give a look !" target="_tab">
                 <i class="fa fa-linkedin"></i>
               </a>
-              <a href="#" title="Text me !">
+              <a href="mailto:mitel.chris.freelance@gmail.com" title="Text me !">
                 <i class="fa fa-envelope-o"></i>
-              </a>
-              <a href="#" title="Call me !">
-                <i class="fa fa-phone"></i>
               </a>
             </div>
           </div>
@@ -40,10 +37,7 @@
             <div class="content-placeholder d-flex w-50 flex-column-reverse h-100">
               <Typing v-if="isTyping"></Typing>
 
-              <transition-group
-                name="custom-classes-transition"
-                enter-active-class="animated fadeInUpBig"
-              >
+              <transition-group name="custom-classes-transition" enter-active-class="animated fadeInUpBig">
                 <MsgBull v-for="m in messages" v-bind:key="m.id" :class="[`order-${messages.length-m.id}`]" v-bind:msg="m.msg" v-bind:createDate="m.date"></MsgBull>
               </transition-group>
             </div>
@@ -76,10 +70,9 @@ import Messages from './assets/config/messages.config';
 export default class App extends Vue {
 
   messages: any = [];
-  interval!: any;
-  nb: number = 0;
   isTyping: boolean = false;
 
+  // methods
   onTyping(isTyping: boolean): void {
     this.isTyping = isTyping === true;
   }
@@ -92,27 +85,13 @@ export default class App extends Vue {
     }
   }
 
+  // Computed
   get tabMessages(): string[] {
     const data = [];
     for (const el of Messages) {
       data.push(el.msg);
     }
     return data;
-  }
-
-  // Lifecycle hooks
-  created() {
-    console.log(`== App - CREATED ==`);
-  }
-  mounted() {
-    console.log(`== App - MOUNTED ==`);
-  }
-  updated() {
-    console.log(`== App - UPDATED ==`);
-  }
-  destroyed() {
-    console.log(`== App - DESTROYED ==`);
-    clearInterval(this.interval);
   }
 }
 </script>
