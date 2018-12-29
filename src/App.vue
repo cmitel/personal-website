@@ -8,6 +8,7 @@
               <img src="./assets/images/chrismitel.png" />
             </div>
           </div>
+          <h1 class="d-flex justify-content-center mb-3" id="head-title">Chris Mitel, French Software Engineer !</h1>
           <div class="line"></div>
           <div class="head-footer-block d-flex flex-row justify-content-center">
             <div class="head-footer-container d-flex justify-content-between">
@@ -117,6 +118,12 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
+
+@font-face{
+	font-family: 'Caroni';
+	src: url('./assets/fonts/caroni/Caroni-Regular.otf') format('woff');
+}
+
 html,
 body {
   flex-grow: 1;
@@ -161,6 +168,11 @@ a:hover {
 .d-flex {
   min-height: 0;
   min-width: 0;
+}
+
+#head-title {
+  font-family: 'Caroni', 'Roboto', 'Sans-serif';
+  font-size: 2rem;
 }
 
 #container {

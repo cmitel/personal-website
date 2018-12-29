@@ -84,6 +84,15 @@ let config = {
           outputPath: 'images',
           name: '[path][name].[ext]',
         },
+      },
+
+      {
+        test: /\.(ttf|otf|eot|svg|woff)$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'fonts',
+          name: '[path][name].[ext]',
+        },
       }
 
     ]
