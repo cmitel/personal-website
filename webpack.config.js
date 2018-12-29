@@ -75,6 +75,15 @@ let config = {
         test: /\.vue$/,
         use: 'vue-loader'
         // include: path.resolve(__dirname, './src/')
+      },
+
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'images',
+          name: '[path][name].[ext]',
+        },
       }
 
     ]
