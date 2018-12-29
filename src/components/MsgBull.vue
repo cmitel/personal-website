@@ -82,18 +82,18 @@ export default class MsgBull extends Vue {
   }
 
   // Lifecycle hooks
-  created() {
-    console.log(`== MsgBull - CREATED ==`);
-  }
-  mounted() {
-    console.log(`== MsgBull - MOUNTED ==`);
-  }
-  updated() {
-    console.log(`== MsgBull - UPDATED ==`);
-  }
-  destroyed() {
-    console.log(`== MsgBull - DESTROYED ==`);
-  }
+  // created() {
+  //   console.log(`== MsgBull - CREATED ==`);
+  // }
+  // mounted() {
+  //   console.log(`== MsgBull - MOUNTED ==`);
+  // }
+  // updated() {
+  //   console.log(`== MsgBull - UPDATED ==`);
+  // }
+  // destroyed() {
+  //   console.log(`== MsgBull - DESTROYED ==`);
+  // }
 }
 </script>
 
