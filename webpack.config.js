@@ -6,6 +6,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 let config = {
   entry: [
     '@babel/polyfill',
+    './src/polyfill.ts',
     "./src/index.ts"
   ],
   output: {
@@ -15,7 +16,7 @@ let config = {
   resolve: {
     extensions: ["*", ".ts", ".js", ".vue", ".json"],
     alias: {
-      'vue': 'vue/dist/vue.esm.js'
+      'vue': 'vue/dist/vue.js'
     }
   },
 
@@ -27,9 +28,14 @@ let config = {
     hints: false
   },
 
+  optimization: {
+    minimize: false
+  },
+
   externals: {
     vue: 'Vue',
-    // 'typed.js': 'Typed'
+    jquery: 'jQuery',
+    'typed.js': 'Typed'
   },
 
   target: 'web',
@@ -54,9 +60,7 @@ let config = {
 
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery',
-      vue: ['vue/dist/vue.esm.js', 'default'],
-      // Typed: 'typed.js'
+      jQuery: 'jquery'
     })
 
   ],
