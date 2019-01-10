@@ -5,19 +5,8 @@ var casper = require('casper').create({
   onLoadError: function (casper, url, status) { console.log("Failed to load " + url + " / " + status); },
   onResourceRequested: function (casper, resource) { console.log("Resource REquested :: " + resource.method + " " + resource.url ); },
   onResourceReceived: function (casper, resource) { console.log("Resource Received :: " + resource.status + " " + resource.url ); },
-  // onPageInitialized: function () { console.log('PAGE INITIALIZED'); },
-  // onStepComplete: function () { console.log('STEP COMPLETE'); },
 });
-var devices = [require('./docs/devices.json').shift()];
-
-/*
-  "Device Name": "Acer Iconia Tab A1-810",
-  "Platform": "Android",
-  "OS Version": "4.2.2",
-  "Portrait Width": "768",
-  "Landscape Width": "1024",
-  "Release Date": "2013-05"
-*/
+var devices = require('./docs/devices.json');
 
 var deviceObjKeys = [
   "Device Name",
@@ -35,7 +24,7 @@ var toStringDevice = function (deviceObj) {
 
   for (var key in deviceObjKeys) {
     toStringTab.push(
-      deviceObj[deviceObjKeys[key]].replace(/ /gi, '')
+      deviceObj[deviceObjKeys[key]].replace(/[ \/-]/gi, '')
     );
   }
 
@@ -44,14 +33,13 @@ var toStringDevice = function (deviceObj) {
 
 var getViewPortSizes = function (deviceObj) {
   return {
-    height: deviceObj["Portrait Width"],
-    width: deviceObj["Landscape Width"]
+    width: deviceObj["Portrait Width"],
+    height: deviceObj["Landscape Width"]
   };
 };
 
 // Opens casperjs homepage
-casper.start('http://localhost:3000');
-// casper.start('https://vuejs.org/v2/examples/');
+casper.start('http://localhost:8080');
 
 casper.on("page.error", function(msg, trace) {
   this.echo("#### Error:    " + msg, "ERROR");
@@ -75,17 +63,17 @@ casper.on("page.initialized", function(page){
 casper.waitForSelector('body', function () {
   this.echo("-------- body ready --------");
 
+  this.wait(30000);
+
   casper.each(devices, function (casper, deviceObj) {
 
     var viewportSizes = getViewPortSizes(deviceObj);
     var captureName = toStringDevice(deviceObj) + '.png';
 
-    this.then(function () {
-
-      this.viewport(1024, 768);
-      // this.viewport(parseInt(viewportSizes.width, 10), parseInt(viewportSizes.height, 10));
-      this.wait(10000);
-    });
+    // this.then(function () {
+    //   this.viewport(parseInt(viewportSizes.width, 10), parseInt(viewportSizes.height, 10));
+    //   this.wait(10000);
+    // });
 
     // this.thenOpen('http://localhost:8080/', function () {
     //   this.wait(10000);
@@ -100,13 +88,12 @@ casper.waitForSelector('body', function () {
       this.capture('./screenshots/' + captureName, {
         top: 0,
         left: 0,
-        width: 1024,
-        height: 768
-        // width: parseInt(viewportSizes.width, 10),
-        // height: parseInt(viewportSizes.height, 10)
+        width: parseInt(viewportSizes.width, 10),
+        height: parseInt(viewportSizes.height, 10)
       });
 
       this.echo("=== CAPTURE ENDED ===");
+      this.wait(2000);
     });
   });
 });
