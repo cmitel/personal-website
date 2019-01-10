@@ -1,0 +1,210 @@
+
+
+
+.msgbull {
+  font-size: 0.95rem;
+}
+.msgbull a,
+.msgbull a:hover,
+.msgbull a:active {
+  color: yellow;
+  font-weight: bold;
+}
+.msgbull-text {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+.msgbull-time {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+  font-size: 0.8rem;
+  color: #d8e5ff;
+}
+.icon {
+  color: red;
+  position: absolute;
+  bottom: 10px;
+  right: -10px;
+  color: #1f64ef;
+}
+
+
+#footer {
+  flex-grow: 1;
+}
+.txtContent {
+  border-radius: 2rem;
+  border: solid 1px #cbd7db;
+  background-color: #deebef;
+  transition: background-color ease 0.25s;
+  font-size: 0.95rem;
+}
+.txtContent:hover {
+    background-color: #cbd7db;
+}
+.txtContent:focus {
+    background-color: #fff;
+    outline: none;
+    border: solid 1px #cbd7db;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    font-size: 0.95rem;
+}
+.typed-cursor {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
+.typing-container {
+  position: relative;
+  margin-right: auto;
+}
+.typing-container .block {
+    float: right;
+}
+.typing-container span {
+    height: 15px;
+    width: 15px;
+    float: left;
+    margin: 0 1px;
+    background-color: #9e9ea1;
+    display: block;
+    border-radius: 50%;
+    opacity: 0.4;
+}
+.typing-container span:nth-of-type(1) {
+      animation: 1s blink infinite 0.3333s;
+}
+.typing-container span:nth-of-type(2) {
+      animation: 1s blink infinite 0.6666s;
+}
+.typing-container span:nth-of-type(3) {
+      animation: 1s blink infinite 0.9999s;
+}
+@keyframes blink {
+50% {
+    opacity: 1;
+}
+}
+
+
+@font-face {
+  font-family: 'Caroni';
+  src: url(fonts/src/assets/fonts/caroni/Caroni-Regular.otf) format("woff");
+}
+html,
+body {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  height: 100%;
+  font-size: 100%;
+}
+body {
+  font-size: 1.25rem;
+}
+img {
+  width: 250px;
+  max-width: 100%;
+  max-height: 250px;
+  height: auto;
+  vertical-align: middle;
+}
+.img-container {
+  overflow: hidden;
+}
+a {
+  color: #6a777c;
+  transition: color ease 0.25s;
+}
+a.active,
+a:hover {
+  color: #284f60;
+}
+.head-footer-container {
+  width: 25%;
+  font-size: 1.75rem;
+}
+.d-flex {
+  min-height: 0;
+  min-width: 0;
+}
+#head-title {
+  font-family: 'Caroni', 'Roboto', 'Sans-serif';
+  font-size: 2rem;
+}
+#container {
+  background-color: white;
+}
+#container,
+[role="v-container"] {
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-basis: auto;
+  height: 100%;
+}
+#header {
+  flex-grow: 1;
+}
+#content {
+  flex-grow: 20;
+}
+#content {
+  /*   overflow: hidden; */
+  max-height: 100%;
+}
+.content-container {
+  flex-grow: 1;
+  flex-basis: auto;
+  flex-shrink: 0;
+  position: relative;
+}
+.content-placeholder {
+  position: absolute;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  top: 0;
+}
+.msgbull-container {
+  width: 75%;
+  background-color: #1f64ef;
+  color: #fff;
+  border-radius: 15px;
+  position: relative;
+  margin-left: auto;
+}
+
+/* width */
+.content-placeholder::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+.content-placeholder::-webkit-scrollbar-track {
+  background: #fff;
+}
+.content-placeholder::-webkit-scrollbar-track:hover {
+  background: #f8f8f8;
+}
+
+/* Handle */
+.content-placeholder::-webkit-scrollbar-thumb {
+  background: #fff;
+}
+
+/* Handle on hover */
+.content-placeholder::-webkit-scrollbar-thumb:hover {
+  background: #909090;
+}
+.line {
+  height: 1px;
+  width: 100%;
+  display: block;
+  background: linear-gradient(to left, #fff, #6a777c, #fff);
+}
+

@@ -4,7 +4,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 let config = {
-  entry: "./src/index.ts",
+  entry: [
+    '@babel/polyfill',
+    "./src/index.ts"
+  ],
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "bundle.js"
@@ -15,6 +18,21 @@ let config = {
       'vue': 'vue/dist/vue.esm.js'
     }
   },
+
+  devServer: {
+    historyApiFallback: false,
+    noInfo: false
+  },
+  performance: {
+    hints: false
+  },
+
+  externals: {
+    vue: 'Vue',
+    // 'typed.js': 'Typed'
+  },
+
+  target: 'web',
 
   plugins: [
 
@@ -36,7 +54,9 @@ let config = {
 
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
+      vue: ['vue/dist/vue.esm.js', 'default'],
+      // Typed: 'typed.js'
     })
 
   ],
@@ -58,7 +78,16 @@ let config = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: ["vue-hot-reload-loader"]
+        loader: ["vue-hot-reload-loader"],
+      },
+
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        query: {
+          presets: ['es2015']
+        }
       },
 
       {

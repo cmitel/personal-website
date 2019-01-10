@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/vue/latest/vue.js" charset="utf-8"></script>
+  <style media="screen"> body { background-color: #fff; } </style>
+</head>
+
+<body>
+  plain text before vue
+  <div id="app"><todo-item></todo-item></div>
+  plain text after vue
+  <script type="text/javascript">
+
+    var TodoItem = Vue.component('todo-item', {
+      template: '<p>This is a todo</p>'
+    });
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      },
+      components: { TodoItem },
+      template: '<todo-item/>'
+    });
+  </script>
+</body>
+
+</html>
