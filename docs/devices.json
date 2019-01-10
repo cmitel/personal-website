@@ -88,7 +88,7 @@
 		"Release Date":"2012-08"
 	},
 	{
-		"Device Name":"Alcatel (Vodafone) Smart Mini 875",
+		"Device Name":"Alcatel Vodafone Smart Mini 875",
 		"Platform":"Android",
 		"OS Version":"4.1.1",
 		"Portrait Width":"320",
@@ -112,7 +112,7 @@
 		"Release Date":"2013-05"
 	},
 	{
-		"Device Name":"Archos 70b (it2)",
+		"Device Name":"Archos 70b it2",
 		"Platform":"Android",
 		"OS Version":"3.2.1",
 		"Portrait Width":"600",
@@ -224,7 +224,7 @@
 		"Release Date":"2012-11"
 	},
 	{
-		"Device Name":"Barnes &amp; Noble Nook HD",
+		"Device Name":"Barnes Noble Nook HD",
 		"Platform":"Android",
 		"OS Version":"4.0.4",
 		"Portrait Width":"600",
@@ -512,7 +512,7 @@
 		"Release Date":"2014-01"
 	},
 	{
-		"Device Name":"HTC Desire Z (Vision)",
+		"Device Name":"HTC Desire Z Vision",
 		"Platform":"Android",
 		"OS Version":"2.2",
 		"Portrait Width":"480",
@@ -680,7 +680,7 @@
 		"Release Date":"2012-11"
 	},
 	{
-		"Device Name":"HTC Windows Phone 8X (C625b)",
+		"Device Name":"HTC Windows Phone 8X C625b",
 		"Platform":"WP8",
 		"OS Version":"8.0",
 		"Portrait Width":"320",
@@ -912,7 +912,7 @@
 		"Release Date":"2011-06"
 	},
 	{
-		"Device Name":"Kogan 42&quot; Smart 3D LED TV",
+		"Device Name":"Kogan 42 Smart 3D LED TV",
 		"Platform":"Android",
 		"OS Version":"4.1.2",
 		"Portrait Width":"-",
@@ -953,7 +953,7 @@
 	},
 	{
 		"Device Name":"LG 55LW6500 TV",
-		"Platform":"Proprietary (TV)",
+		"Platform":"Proprietary TV",
 		"OS Version":"5.00.07",
 		"Portrait Width":"-",
 		"Landscape Width":"1280",
@@ -1041,7 +1041,7 @@
 	},
 	{
 		"Device Name":"LG Viewty KU990",
-		"Platform":"Proprietary (Java)",
+		"Platform":"Proprietary Java",
 		"OS Version":"1.2",
 		"Portrait Width":"240",
 		"Landscape Width":"400",
@@ -1240,7 +1240,7 @@
 		"Release Date":"2012-07"
 	},
 	{
-		"Device Name":"Nexus 7 (LCD Density set to 175PPI)",
+		"Device Name":"Nexus 7 LCD Density set to 175PPI",
 		"Platform":"Android",
 		"OS Version":"4.1.1",
 		"Portrait Width":"731",
@@ -1248,7 +1248,7 @@
 		"Release Date":"2012-07"
 	},
 	{
-		"Device Name":"Nexus 7 (2013)",
+		"Device Name":"Nexus 7 2013",
 		"Platform":"Android",
 		"OS Version":"4.3",
 		"Portrait Width":"600",
@@ -1290,7 +1290,7 @@
 	{
 		"Device Name":"Nintendo DSi",
 		"Platform":"DSi",
-		"OS Version":"507; U; en-GB",
+		"OS Version":"507 U en-GB",
 		"Portrait Width":"256",
 		"Landscape Width":"-",
 		"Release Date":"2009-04"
@@ -1329,7 +1329,7 @@
 	},
 	{
 		"Device Name":"Nokia Asha 300",
-		"Platform":"Proprietary (Nokia)",
+		"Platform":"Proprietary Nokia",
 		"OS Version":"07.03 29-11-11 RM-781",
 		"Portrait Width":"234",
 		"Landscape Width":"-",
@@ -1337,7 +1337,7 @@
 	},
 	{
 		"Device Name":"Nokia Asha 302",
-		"Platform":"Proprietary (Nokia)",
+		"Platform":"Proprietary Nokia",
 		"OS Version":"14.53 20-03-12 RM-813",
 		"Portrait Width":"314",
 		"Landscape Width":"-",
@@ -1352,7 +1352,7 @@
 		"Release Date":"2011-09"
 	},
 	{
-		"Device Name":"Nokia 700 (Opera Mobile)",
+		"Device Name":"Nokia 700 Opera Mobile",
 		"Platform":"Symbian",
 		"OS Version":"Belle FP2",
 		"Portrait Width":"240",
@@ -1504,7 +1504,7 @@
 		"Release Date":"2012-12"
 	},
 	{
-		"Device Name":"PendoPad 7&quot;",
+		"Device Name":"PendoPad 7",
 		"Platform":"Android",
 		"OS Version":"4.2.2",
 		"Portrait Width":"480",
@@ -1512,7 +1512,7 @@
 		"Release Date":"2013-11"
 	},
 	{
-		"Device Name":"PendoPad 10&quot;",
+		"Device Name":"PendoPad 10",
 		"Platform":"Android",
 		"OS Version":"4.2.2",
 		"Portrait Width":"600",
@@ -1537,7 +1537,7 @@
 	},
 	{
 		"Device Name":"Samsung E3210",
-		"Platform":"Proprietary (Java)",
+		"Platform":"Proprietary Java",
 		"OS Version":"-",
 		"Portrait Width":"128",
 		"Landscape Width":"-",
@@ -1624,7 +1624,7 @@
 		"Release Date":"2012-08"
 	},
 	{
-		"Device Name":"Samsung Galaxy Note 10.1 N8010 (Multiscreen Enabled)",
+		"Device Name":"Samsung Galaxy Note 10.1 N8010 Multiscreen Enabled",
 		"Platform":"Android",
 		"OS Version":"4.0.4",
 		"Portrait Width":"800",
@@ -1632,7 +1632,7 @@
 		"Release Date":"2012-08"
 	},
 	{
-		"Device Name":"Samsung Galaxy Note 10.1 (2014 Edition) P600",
+		"Device Name":"Samsung Galaxy Note 10.1 2014 Edition P600",
 		"Platform":"Android",
 		"OS Version":"4.3",
 		"Portrait Width":"800",
@@ -1929,7 +1929,7 @@
 	},
 	{
 		"Device Name":"Sony BRAVIA 40 EX520",
-		"Platform":"Proprietary (TV)",
+		"Platform":"Proprietary TV",
 		"OS Version":"PKG4.012GAA-0104",
 		"Portrait Width":"-",
 		"Landscape Width":"1920",
@@ -1937,7 +1937,7 @@
 	},
 	{
 		"Device Name":"Sony Ericsson Elm",
-		"Platform":"Proprietary (Java)",
+		"Platform":"Proprietary Java",
 		"OS Version":"1231-1917 R7CA061 100619",
 		"Portrait Width":"240",
 		"Landscape Width":"-",
@@ -1945,7 +1945,7 @@
 	},
 	{
 		"Device Name":"Sony Ericsson Spiro",
-		"Platform":"Proprietary (Java)",
+		"Platform":"Proprietary Java",
 		"OS Version":"-",
 		"Portrait Width":"240",
 		"Landscape Width":"-",
@@ -2232,7 +2232,7 @@
 		"Release Date":"2013-07"
 	},
 	{
-		"Device Name":"ZTE T22 (Telstra Urbane)",
+		"Device Name":"ZTE T22 Telstra Urbane",
 		"Platform":"Android",
 		"OS Version":"4.0.4",
 		"Portrait Width":"320",
@@ -2240,7 +2240,7 @@
 		"Release Date":"2012-08"
 	},
 	{
-		"Device Name":"ZTE T28 (Telstra Active Touch)",
+		"Device Name":"ZTE T28 Telstra Active Touch",
 		"Platform":"Android",
 		"OS Version":"2.3.5",
 		"Portrait Width":"320",
@@ -2248,7 +2248,7 @@
 		"Release Date":"2011-05"
 	},
 	{
-		"Device Name":"ZTE T760 (Telstra Smart-Touch 2)",
+		"Device Name":"ZTE T760 Telstra Smart-Touch 2",
 		"Platform":"Android",
 		"OS Version":"2.3.5",
 		"Portrait Width":"320",
@@ -2256,7 +2256,7 @@
 		"Release Date":"2012-02"
 	},
 	{
-		"Device Name":"ZTE T790 (Telstra Pulse)",
+		"Device Name":"ZTE T790 Telstra Pulse",
 		"Platform":"Android",
 		"OS Version":"4.0.4",
 		"Portrait Width":"320",
@@ -2264,7 +2264,7 @@
 		"Release Date":"2013-05"
 	},
 	{
-		"Device Name":"ZTE T81 (Telstra Frontier 4G)",
+		"Device Name":"ZTE T81 Telstra Frontier 4G",
 		"Platform":"Android",
 		"OS Version":"4.0.4",
 		"Portrait Width":"320",
@@ -2272,7 +2272,7 @@
 		"Release Date":"2012-11"
 	},
 	{
-		"Device Name":"ZTE T82 (Telstra Easy Touch 4G)",
+		"Device Name":"ZTE T82 Telstra Easy Touch 4G",
 		"Platform":"Android",
 		"OS Version":"4.0.4",
 		"Portrait Width":"360",
@@ -2280,7 +2280,7 @@
 		"Release Date":"2012-11"
 	},
 	{
-		"Device Name":"ZTE T83 (Telstra Dave 4G)",
+		"Device Name":"ZTE T83 Telstra Dave 4G",
 		"Platform":"Android",
 		"OS Version":"4.1.2",
 		"Portrait Width":"320",
